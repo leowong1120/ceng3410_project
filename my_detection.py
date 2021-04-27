@@ -10,7 +10,7 @@ while display.IsStreaming():
 	detections = net.Detect(img)
 	for detection in detections:
 		if (net.GetClassDesc(detection.ClassID) == "person"):
-			break
+			return
 	display.Render(img)
 	display.SetStatus("Object Detection | Network {:.0f} FPS".format(net.GetNetworkFPS()))
 	
