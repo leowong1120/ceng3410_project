@@ -9,9 +9,8 @@ while display.IsStreaming():
 	img = camera.Capture()
 	detections = net.Detect(img)
 	for detection in detections:
-		print(net.GetClassDesc(detection.ClassID))
-	if (net.GetClassDesc(detection.ClassID) == "person"):
-		print("Game start!")
+		if (net.GetClassDesc(detection.ClassID) == "person"):
+			break
 	display.Render(img)
 	display.SetStatus("Object Detection | Network {:.0f} FPS".format(net.GetNetworkFPS()))
 	
