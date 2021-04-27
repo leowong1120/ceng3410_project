@@ -1,4 +1,4 @@
-def face:
+def face():
 	import jetson.inference
 	import jetson.utils
 
@@ -14,4 +14,5 @@ def face:
 				return
 		display.Render(img)
 		display.SetStatus("Object Detection | Network {:.0f} FPS".format(net.GetNetworkFPS()))
+face()
 	
